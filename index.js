@@ -3,7 +3,7 @@ var bits = 10;
 var equalies = 0; // equal zeroes and ones
 var luckies = 0; // m ones in first k bits
 var k = 5 // <= bits
-var m = 1 // <= bits/2 , <= k
+var m = 0 // <= bits/2 , <= k
 
 var matrixInit = function (){
   matrix32 = [];
@@ -81,7 +81,10 @@ do {
 console.log('equalies :',equalies,comb(bits/2,bits));
 console.log('luckies :',luckies,comb(m,k)*comb(bits/2-m,bits-k));
 console.log('total outcomes :',Math.pow(2,bits));
-console.log('probability :',100*comb(m,k)*comb(bits/2-m,bits-k)/Math.pow(2,bits),'%');
+
+console.log('A probability :',100*comb(m,k)*comb(bits/2-m,bits-k)/comb(bits/2,bits),'%');
+console.log('B probability :',100*comb(m,k)*comb(bits/2-m,bits-k)/Math.pow(2,bits),'%');
+
 
 
 
